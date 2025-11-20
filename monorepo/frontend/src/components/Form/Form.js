@@ -20,7 +20,9 @@ function Form({ onSubmit }) {
   };
 
   const buttonIsDisabled =
-    !formData.selectedPreferences.length && !formData.selectedFeatures.length;
+    (!formData.selectedPreferences.length &&
+      !formData.selectedFeatures.length) ||
+    !formData.selectedRecommendationType;
 
   return (
     <form
