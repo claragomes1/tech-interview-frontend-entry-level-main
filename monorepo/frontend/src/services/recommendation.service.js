@@ -47,8 +47,11 @@ const getRecommendations = (
   }
 
   return matchedScoredProducts
-    .sort((a, b) => b.score - a.score)
-    .map((scored) => scored.product);
+    .sort(
+      (scoredProductA, scoredProductB) =>
+        scoredProductB.score - scoredProductA.score
+    )
+    .map((scoredProduct) => scoredProduct.product);
 };
 
 const recommendationService = { getRecommendations };
